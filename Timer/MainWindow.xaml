@@ -1,0 +1,28 @@
+﻿<Window x:Name="Timer" x:Class="Timer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Timer"
+        mc:Ignorable="d"
+        Title="Timer" Background="Black" Height="350" Width="1150" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" StateChanged="On_StateChanged" Closing="App_Closing">
+    <Grid Margin="0,0,2,0">
+        <Label x:Name="clockLabel" Foreground="Lime" Content="  0:00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="138" Width="333" FontSize="144" FontFamily="DS-Digital" FontWeight="Bold"/>
+        <Label x:Name="secondLabel" Foreground ="Lime" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,89,0,0" FontSize="48" FontFamily="DS-Digital" FontWeight="Bold" Height="59" Width="59" RenderTransformOrigin="0.55,0.674"/>
+        <Label x:Name="dateLabel" Foreground="Green" Content="STY 01 2000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,160,0,0" Height="81" Width="371" FontSize="60" FontFamily="DS-Digital" FontWeight="Bold"/>
+        <Label x:Name="dayLabel" Foreground="Green" Content="SOBOTA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="325,160,0,0" Height="81" Width="371" FontSize="60" FontFamily="DS-Digital" FontWeight="Bold"/>
+        <RadioButton x:Name="radioShutdown" Content="Wyłącz komputer" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="716,46,0,0" FontSize="22" Height="30" Width="198" FontFamily="DS-Digital" IsChecked="True"/>
+        <RadioButton x:Name="radioRestart" Content="Uruchom ponownie" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="716,81,0,0" FontSize="22" Height="30" Width="226" FontFamily="DS-Digital"/>
+        <ComboBox x:Name="hoursset" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Margin="974,47,0,0" Height="29" IsReadOnly="True">
+        </ComboBox>
+        <ComboBox x:Name ="minset" HorizontalAlignment="Left" VerticalAlignment="Top" Width="61" Margin="1033,46,0,0" RenderTransformOrigin="0.929,-0.187" Height="30" IsReadOnly="True"/>
+        <Label x:Name="ActionTitleLabel" Content="WYBIERZ AKCJĘ: " Foreground="Lime" HorizontalAlignment="Left" Margin="716,8,0,0" VerticalAlignment="Top" FontFamily="DS-Digital" FontWeight="Bold" FontSize="22"/>
+        <Label x:Name="ComboBoxLabel" Content="USTAW GODZINĘ" Foreground="Lime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="957,8,0,0" FontWeight="Bold" FontFamily="DS-Digital" FontSize="24"/>
+        <Button x:Name="newActionButton" Content="NOWA AKCJA" Foreground="White"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Margin="427,246,0,0" FontSize="36" BorderBrush="Black" Click="newActionButton_Click" FontFamily="DS-Digital"/>
+        <Button x:Name="Cancelbutton" Content="ANULUJ" Foreground="White"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Margin="914,160,0,0" FontFamily="DS-Digital" FontSize="36" BorderBrush="Black" RenderTransformOrigin="1,0" Click="Cancelbutton_Click"/>
+        <Button x:Name="OKButton" Content="OK" Foreground="White"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Margin="734,160,0,0" FontFamily="DS-Digital" FontSize="36" BorderBrush="Black" Click="OKButton_Click"/>
+        <Label x:Name="eventLabel" Content="" Foreground="White" HorizontalAlignment="Left" Margin="22,246,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" FontFamily="DS-Digital"/>
+        <Label x:Name="timeEventLabel" Content="" Foreground="White" HorizontalAlignment="Left" Margin="202,246,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" FontFamily="DS-Digital"/>
+        <Label x:Name="ErrorLabel" Content="" Foreground="Red" HorizontalAlignment="Left" Margin="734,246,0,0" VerticalAlignment="Top" FontFamily="DS-Digital" FontWeight="Bold" FontSize="22"/>
+    </Grid>
+</Window>
