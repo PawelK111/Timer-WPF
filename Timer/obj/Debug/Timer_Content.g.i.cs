@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("vcferreira-firefox-os-clock.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("fonts/ds-digi.ttf")]
 
 
