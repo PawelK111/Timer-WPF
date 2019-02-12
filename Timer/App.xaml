@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:Timer"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="CustomFont">
+        <Style x:Key="DS-DIGI">
             <Setter Property="TextElement.FontFamily"
-                    Value="/Fonts/#DIGITAL"></Setter>
+                    Value="Fonts/DS-DIGI.TTF #DS-DIGITAL"></Setter>
         </Style>
     </Application.Resources>
 </Application>

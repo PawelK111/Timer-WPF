@@ -29,3 +29,7 @@ C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.csproj
 C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.exe
 C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.pdb
 C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\App.baml
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\bin\Debug\Timer.exe.manifest
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\bin\Debug\Timer.application
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.exe.manifest
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.application
