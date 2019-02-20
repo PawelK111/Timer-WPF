@@ -75,10 +75,15 @@ namespace Timer
             }
             else
             {
-                newActionButton.Visibility = Visibility.Hidden;
+               // newActionButton.Visibility = Visibility.Hidden;
                 for (int i = 700; i <= 1150; i += 10)
                 {
                     this.Width = i;
+                }
+
+                for (int i = 100; i > 0; i--)
+                {
+                    newActionButton.Opacity = i;
                 }
             }
         }
@@ -94,8 +99,9 @@ namespace Timer
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            if (hoursset.SelectedItem != null && minset.SelectedItem != null)
+            try
             {
+                timeEventLabel.Content = hoursset.SelectedItem.ToString() + ":" + minset.SelectedItem.ToString();
                 if (radioShutdown.IsChecked == true)
                 {
                     eventLabel.Content = "SHUTDOWN: ";
@@ -104,25 +110,15 @@ namespace Timer
                 {
                     eventLabel.Content = "RESTART: ";
                 }
-                if (hoursset.Items == null)
-                {
-                    hoursset.SelectedItem = "0";
-                }
-                if (minset.Items == null)
-                {
-                    minset.SelectedItem = "00";
-                }
-                timeEventLabel.Content = hoursset.SelectedItem.ToString() + ":" + minset.SelectedItem.ToString();
                 newActionButton.Content = "USUŃ AKCJĘ";
                 ErrorLabel.Content = "";
-
                 newActionButton.Visibility = Visibility.Visible;
                 for (int i = 1150; i >=700; i -= 10)
                 {
                     this.Width = i;
                 }
             }
-            else
+            catch
             {
                 ErrorLabel.Content = "GODZINA NIE JEST USTAWIONA PRAWIDŁOWO!";
             }

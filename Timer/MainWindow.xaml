@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Timer"
         mc:Ignorable="d"
         Title="Timer" Background="Black" Height="350" Width="1150" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" StateChanged="On_StateChanged" Closing="App_Closing">
-    <Grid Margin="0,0,2,0">
+    <Grid>
         <Label x:Name="clockLabel" Style="{StaticResource DS-DIGI}" Foreground="Lime" Content="  0:00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="138" Width="333" FontSize="144" FontWeight="Bold"/>
         <Label x:Name="secondLabel" Style="{StaticResource DS-DIGI}" Foreground ="Lime" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,89,0,0" FontSize="48" FontWeight="Bold" Height="59" Width="59" RenderTransformOrigin="0.55,0.674"/>
         <Label x:Name="dateLabel"  Style="{StaticResource DS-DIGI}" Foreground="Green" Content="STY 01 2000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,160,0,0" Height="81" Width="321" FontSize="60" FontWeight="Bold"/>
