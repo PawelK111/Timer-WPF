@@ -43,14 +43,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Timer.exe" size="395792">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignColors.dll" size="228352">
+      <assemblyIdentity name="MaterialDesignColors" version="1.0.0.14576" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>gia3dKTk7GDLhMHk9Z10TCiBlNhq4WH4xBg+c+/mS40=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignThemes.Wpf.dll" size="5544448">
+      <assemblyIdentity name="MaterialDesignThemes.Wpf" version="2.5.0.1205" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5PybQHBnAzNUw+vk4Qhupch4aEzMJjWJkTBxF078v3o=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Timer.exe" size="397840">
       <assemblyIdentity name="Timer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KBrgEfjF3rx/Lm8Rmo6NBlpcf8g262scdaV5V3anZHM=</dsig:DigestValue>
+        <dsig:DigestValue>MFrE0AGhsdtz+/BmbgXErddeN3y/NkRRaymIuOAgkPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

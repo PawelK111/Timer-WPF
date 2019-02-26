@@ -4,25 +4,61 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Timer"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Timer" Background="Black" Height="350" Width="1150" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" StateChanged="On_StateChanged" Closing="App_Closing">
+        Title="Timer" Background="Black" Height="350" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" StateChanged="On_StateChanged" Closing="App_Closing">
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)"  Storyboard.TargetName="NewActionGrid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="30"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="310"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="NewActionGrid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="310"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="30"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="OpenActionMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CloseActionMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
         <Label x:Name="clockLabel" Style="{StaticResource DS-DIGI}" Foreground="Lime" Content="  0:00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="138" Width="333" FontSize="144" FontWeight="Bold"/>
         <Label x:Name="secondLabel" Style="{StaticResource DS-DIGI}" Foreground ="Lime" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,89,0,0" FontSize="48" FontWeight="Bold" Height="59" Width="59" RenderTransformOrigin="0.55,0.674"/>
         <Label x:Name="dateLabel"  Style="{StaticResource DS-DIGI}" Foreground="Green" Content="STY 01 2000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,160,0,0" Height="81" Width="321" FontSize="60" FontWeight="Bold"/>
         <Label x:Name="dayLabel" Style="{StaticResource DS-DIGI}" Foreground="Green" Content="SOBOTA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="325,160,0,0" Height="81" Width="371" FontSize="60" FontWeight="Bold"/>
-        <RadioButton x:Name="radioShutdown" Style="{StaticResource DS-DIGI}" Content="Wyłącz komputer" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="716,46,0,0" FontSize="22" Height="30" Width="198" IsChecked="True"/>
-        <RadioButton x:Name="radioRestart" Style="{StaticResource DS-DIGI}" Content="Uruchom ponownie" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="716,81,0,0" FontSize="22" Height="30" Width="226" />
-        <ComboBox x:Name="hoursset" Style="{StaticResource DS-DIGI}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Margin="974,47,0,0" Height="29" IsReadOnly="True">
-        </ComboBox>
-        <ComboBox x:Name ="minset" Style="{StaticResource DS-DIGI}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="61" Margin="1033,46,0,0" RenderTransformOrigin="0.929,-0.187" Height="30" IsReadOnly="True"/>
-        <Label x:Name="ActionTitleLabel" Style="{StaticResource DS-DIGI}" Content="WYBIERZ AKCJĘ: " Foreground="Lime" HorizontalAlignment="Left" Margin="716,8,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
-        <Label x:Name="ComboBoxLabel" Style="{StaticResource DS-DIGI}" Content="USTAW GODZINĘ" Foreground="Lime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="957,8,0,0" FontWeight="Bold" FontSize="24"/>
-        <Button x:Name="newActionButton" Style="{StaticResource DS-DIGI}" Content="NOWA AKCJA" Foreground="White"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Margin="427,246,0,0" FontSize="36" BorderBrush="Black" Click="newActionButton_Click" />
-        <Button x:Name="Cancelbutton" Style="{StaticResource DS-DIGI}" Content="ANULUJ" Foreground="White"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Margin="914,160,0,0" FontSize="36" BorderBrush="Black" RenderTransformOrigin="1,0" Click="Cancelbutton_Click"/>
-        <Button x:Name="OKButton" Style="{StaticResource DS-DIGI}" Content="OK" Foreground="White"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Margin="734,160,0,0" FontSize="36" BorderBrush="Black" Click="OKButton_Click"/>
-        <Label x:Name="eventLabel" Style="{StaticResource DS-DIGI}" Content="" Foreground="White" HorizontalAlignment="Left" Margin="22,246,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
-        <Label x:Name="timeEventLabel" Style="{StaticResource DS-DIGI}" Content="" Foreground="White" HorizontalAlignment="Left" Margin="202,246,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
-        <Label x:Name="ErrorLabel" Style="{StaticResource DS-DIGI}" Content="" Foreground="Red" HorizontalAlignment="Left" Margin="734,246,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <Label x:Name="eventLabel" Style="{StaticResource DS-DIGI}" Content="" Foreground="White" HorizontalAlignment="Left" Margin="22,235,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
+        <Label x:Name="timeEventLabel" Style="{StaticResource DS-DIGI}" Content="" Foreground="White" HorizontalAlignment="Left" Margin="200,235,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
+        <Button x:Name="DeleteActionButton" Visibility="Hidden" Content="USUŃ AKCJĘ!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="475,246,0,0" Background="Black" Click="DeleteActionButton_Click"/>
+        <Grid x:Name="NewActionGrid" Height="30" Background="#FF252525" VerticalAlignment="Bottom">
+            <RadioButton x:Name="radioShutdown" Style="{StaticResource DS-DIGI}" Content="Wyłącz komputer" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,72,0,0" FontSize="22" Height="30" Width="198" IsChecked="True"/>
+            <RadioButton x:Name="radioRestart" Style="{StaticResource DS-DIGI}" Content="Uruchom ponownie" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,107,0,0" FontSize="22" Height="30" Width="226" />
+            <ComboBox x:Name="hoursset" Style="{StaticResource DS-DIGI}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="462,70,0,0" Height="25" IsReadOnly="True">
+            </ComboBox>
+            <ComboBox x:Name ="minset" Style="{StaticResource DS-DIGI}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="527,70,0,0" RenderTransformOrigin="0.929,-0.187" Height="25" IsReadOnly="True"/>
+            <Label x:Name="ActionTitleLabel" Style="{StaticResource DS-DIGI}" Content="WYBIERZ AKCJĘ: " Foreground="Lime" HorizontalAlignment="Left" Margin="70,40,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+            <Label x:Name="ComboBoxLabel" Style="{StaticResource DS-DIGI}" Content="USTAW GODZINĘ" Foreground="Lime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="442,40,0,0" FontWeight="Bold" FontSize="24"/>
+            <Label x:Name="ErrorLabel" Style="{StaticResource DS-DIGI}" Content="" Foreground="Red" HorizontalAlignment="Left" Margin="157,209,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+            <Button Content="Ustaw akcję" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="32" Margin="266,246,0,0" Click="SetAction_Click">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <StackPanel>
+                <Button x:Name="OpenActionMenu" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="OpenActionMenu_Click">
+                    <materialDesign:PackIcon Foreground="White" HorizontalAlignment="Center" Kind="ArrowUp" Width ="700" Height="30"/>
+                </Button>
+                <Button x:Name="CloseActionMenu" VerticalAlignment="Bottom" HorizontalAlignment="Left" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Click="CloseActionMenu_Click">
+                    <materialDesign:PackIcon Foreground="White" HorizontalAlignment="Center" Kind="ArrowDown" Width ="700" Height="30"/>
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

@@ -33,3 +33,8 @@ C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.exe.ma
 C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.application
 C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.exe
 C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.pdb
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\bin\Debug\MaterialDesignColors.dll
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Paweł Kulewicz\Documents\GitHub\Timer WPF\Timer\obj\Debug\Timer.csproj.CopyComplete

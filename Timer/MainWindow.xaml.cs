@@ -28,8 +28,7 @@ namespace Timer
         public MainWindow()
         {
             InitializeComponent();
-            this.Width = 700;
-            nI.Visible = true;
+            nI.Visible = false;
             nI.Icon = new System.Drawing.Icon("Vcferreira-Firefox-Os-Clock.ico");
             nI.Text = "Timer nie posiada ustawionej akcji.";
             nI.MouseClick += new System.Windows.Forms.MouseEventHandler(nI_Click);
@@ -64,41 +63,16 @@ namespace Timer
             dayLabel.Content = DateTime.Now.ToString("dddd");
             check_event();
         }
-        private void newActionButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteActionButton_Click(object sender, RoutedEventArgs e)
         {
-            if ((string)newActionButton.Content == "USUŃ AKCJĘ")
-            {
                 timeEventLabel.Content = "";
                 eventLabel.Content = "";
-                newActionButton.Content = "NOWA AKCJA";
-                counterNotify = 0;
-            }
-            else
-            {
-               // newActionButton.Visibility = Visibility.Hidden;
-                for (int i = 700; i <= 1150; i += 10)
-                {
-                    this.Width = i;
-                }
-
-                for (int i = 100; i > 0; i--)
-                {
-                    newActionButton.Opacity = i;
-                }
-            }
+                DeleteActionButton.Visibility = Visibility.Hidden;
+                nI.Text = "Timer nie posiada ustawionej akcji.";
         }
-        private void Cancelbutton_Click(object sender, RoutedEventArgs e)
+        private void SetAction_Click(object sender, RoutedEventArgs e)
         {
-            newActionButton.Visibility = Visibility.Visible;
-            ErrorLabel.Content = "";
-            for (int i = 1150; i >= 700; i -= 10)
-            {
-                this.Width = i;
-            }  
-            
-        }
-        private void OKButton_Click(object sender, RoutedEventArgs e)
-        {
+            counterNotify = 0;
             try
             {
                 timeEventLabel.Content = hoursset.SelectedItem.ToString() + ":" + minset.SelectedItem.ToString();
@@ -110,13 +84,8 @@ namespace Timer
                 {
                     eventLabel.Content = "RESTART: ";
                 }
-                newActionButton.Content = "USUŃ AKCJĘ";
                 ErrorLabel.Content = "";
-                newActionButton.Visibility = Visibility.Visible;
-                for (int i = 1150; i >=700; i -= 10)
-                {
-                    this.Width = i;
-                }
+                DeleteActionButton.Visibility = Visibility.Visible;
             }
             catch
             {
@@ -128,9 +97,9 @@ namespace Timer
             if((string)timeEventLabel.Content == (string)clockLabel.Content)
             {
                 timeEventLabel.Content = "";
-                newActionButton.Content = "NOWA AKCJA";
                 nI.Text = "Timer nie posiada ustawionej akcji.";
-                if((string)eventLabel.Content == "SHUTDOWN: ")
+                DeleteActionButton.Visibility = Visibility.Hidden;
+                if ((string)eventLabel.Content == "SHUTDOWN: ")
                 {
                     eventLabel.Content = "";
                     System.Diagnostics.Process.Start("shutdown", "/s /t 0");
@@ -150,7 +119,6 @@ namespace Timer
             this.Show();
             this.WindowState = System.Windows.WindowState.Normal;
             nI.Visible = false;
-            
         }
 
         private void On_StateChanged(object sender, EventArgs e)
@@ -188,6 +156,17 @@ namespace Timer
                     e.Cancel = true;
                 }
             }
+        }
+        private void OpenActionMenu_Click(object sender, RoutedEventArgs e)
+        {
+            CloseActionMenu.Visibility = Visibility.Visible;
+            OpenActionMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void CloseActionMenu_Click(object sender, RoutedEventArgs e)
+        {
+            CloseActionMenu.Visibility = Visibility.Collapsed;
+            OpenActionMenu.Visibility = Visibility.Visible;
         }
     }
 }
