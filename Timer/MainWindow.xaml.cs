@@ -127,7 +127,7 @@ namespace Timer
             {
                 this.Hide();
                 nI.Visible = true;
-                if(counterNotify <= 0)
+                if(counterNotify <= 0 )
                 {
                     if ((string)eventLabel.Content == "SHUTDOWN: ")
                     {
