@@ -67,7 +67,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -110,6 +110,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ShutDownEvent.cs" />
+    <Compile Include="Classes\TimerEvent.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
